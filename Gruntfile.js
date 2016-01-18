@@ -47,10 +47,10 @@ module.exports = function(grunt) {
         dest: 'dist/app.js'
       }
     },
-    
+     // use jshint-stylish to make our errors look and read good
     jshint: {
 	  options: {
-        reporter: require('jshint-stylish') // use jshint-stylish to make our errors look and read good
+        reporter: require('jshint-stylish')
       },
       all: [ 'Gruntfile.js', 'src/*.js', 'src/**/*.js']
     },
