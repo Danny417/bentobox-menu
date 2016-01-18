@@ -27,6 +27,7 @@ module.exports = function(config) {
     colors: true,
     autoWatch: false,
     browsers: [ 'PhantomJS' ],
+	logLevel: config.LOG_DEBUG,
     singleRun: true,
     plugins: [
       'karma-phantomjs-launcher',

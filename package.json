@@ -24,9 +24,5 @@
 		"karma-junit-reporter": "~0.2.2",
 		"karma-coverage": "~0.2.6"
 	},
-	"description": "A website of bentobox menu using angular.js",
-	"repository": {
-		"type": "git",
-		"url": ""
-	}
+	"description": "A website of bentobox menu using angular.js"
 }
