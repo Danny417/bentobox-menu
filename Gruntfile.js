@@ -123,7 +123,7 @@ module.exports = function(grunt) {
           'dist/resources/css/style.min.css': 'src/resources/css/style.css'
         }
       }
-    }
+    },
 	
     karma: {
       options: {
