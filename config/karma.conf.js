@@ -6,6 +6,11 @@ module.exports = function(config) {
     basePath: '../',
     frameworks: [ 'jasmine' ],
     files: [
+      'bower_components/jquery/dist/jquery.js',
+      'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/lodash/dist/lodash.js',
+      'bower_components/underscore.string/lib/underscore.string.js',
       'src/**/*.js',
       'tests/**/*.js',
       'src/**/*.html'
