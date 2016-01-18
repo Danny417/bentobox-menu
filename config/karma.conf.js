@@ -6,17 +6,12 @@ module.exports = function(config) {
     basePath: '../',
     frameworks: [ 'jasmine' ],
     files: [
-      'libs/jquery/dist/jquery.js',
-      'libs/angular/angular.js',
-      'libs/angular-mocks/angular-mocks.js',
-      'libs/lodash/dist/lodash.js',
-      'libs/underscore.string/lib/underscore.string.js',
       'src/**/*.js',
       'tests/**/*.js',
-      'src/views/*.html'
+      'src/**/*.html'
     ],
     preprocessors: {
-      'src/views/*.html': 'ng-html2js',
+      'src/**/*.html': 'ng-html2js',
       'src/**/*.js': ['coverage']
     },
     junitReporter: {
