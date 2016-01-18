@@ -1,0 +1,42 @@
+<div id="contact">
+	<div class="jumbotron">
+		<h1 style="font-family:KaiTi, BiauKai;">聯絡我們</h1>
+		<p>
+			<ul>
+			<li>請提前1.5小時預定</li>
+			<li>歡迎公司 團體 學校 機構訂購</li>
+			<li>休假日如需訂購請來電洽詢</li>
+			</ul>
+		</p>
+	</div>
+
+	<div class="row container">
+		<div class="col-md-6 col-xs-12" ng-repeat="object in mediaObjects.locations">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4 ng-bind="object.locHeading"></h4>
+				</div>
+				<div class="panel-body">
+					<div class="media">
+						<a class="media-left media-middle" href="{{object.phoneURL}}">
+							<img class="media-object" ng-src="{{mediaObjects.phoneImg}}">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading">訂購專線</h4>
+							{{object.phoneContent}}
+						</div>
+					</div>
+					<div class="media">
+						<a class="media-left media-middle" href="{{object.locURL}}" target="_blank">
+							<img class="media-object" ng-src="{{mediaObjects.locImg}}">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading">店面住址</h4>
+							{{object.locContent}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
