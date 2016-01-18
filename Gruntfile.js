@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 	  options: {
         reporter: require('jshint-stylish') // use jshint-stylish to make our errors look and read good
       },
-      all: [ 'Gruntfile.js', 'src/*.js', 'src/**/*.js', 'tests/**/*.js' ]
+      all: [ 'Gruntfile.js', 'src/*.js', 'src/**/*.js']
     },
     
     connect: {
