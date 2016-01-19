@@ -1,18 +1,18 @@
-var app = angular.module('app', ['ngSanitize', 'ngRoute']);
+var app = angular.module('app', ['templates-dist', 'ngSanitize', 'ngRoute']);
 
 app.config(function ($routeProvider, $locationProvider) {
 	'use strict';
 	$routeProvider
 		.when('/', {
-			templateUrl : '/resources/pages/main.html',
+			templateUrl : 'views/main.html',
 			controller  : 'main'
 		})
 		.when('/contact', {
-			templateUrl : '/resources/pages/contact.html',
+			templateUrl : 'views/contact.html',
 			controller  : 'contact'
 		})
 		.when('/join', {
-			templateUrl : '/resources/pages/join.html',
+			templateUrl : 'views/join.html',
 			controller  : 'join'
 		})
 		.when('/404', {
