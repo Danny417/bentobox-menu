@@ -60,7 +60,7 @@ body {
 }
 
 .navbar-brand {
-	background-image: url('../img/brand.PNG');
+	background-image: url('..../assets/img/brand.PNG');
 	height: 58px;
 	width: 93px;
 	background-size: 100%;
@@ -82,7 +82,7 @@ h3 {
 -------------------------------------------------- */
 .banner {
 	min-height: 250px;
-	background-image: url("./assets/img/cover_.jpg");
+	background-image: url("..../assets/img/cover_.jpg");
     background-repeat: no-repeat;
     background-position: center; 
     background-size: 1000px 100%;
@@ -168,7 +168,7 @@ h3 {
 	-moz-box-shadow: 10px 10px 5px #ccc; 
 	-webkit-box-shadow: 10px 10px 5px #ccc; 
 	-khtml-box-shadow: 10px 10px 5px #ccc; 
-	background-image: url('../img/map.jpg');
+	background-image: url('..../assets/img/map.jpg');
 	background-repeat: no-repeat;
 	width: 500px;
 	height: 400px;
@@ -317,7 +317,7 @@ input[type='number'] {
 	}
 	#map  > div{
 		margin-top: 40px;
-		background-image: url('./assets/img/map-xs.jpg');
+		background-image: url('..../assets/img/map-xs.jpg');
 		width: 280px;
 		height: 220px;
 	}
