@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/resources/js/main.js': [ 'tmp/app.js' ]
+          'dist/resources/js/main.min.js': [ 'tmp/app.js' ]
         },
         options: {
           mangle: false
@@ -87,7 +87,7 @@ module.exports = function(grunt) {
           archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip'
         },
         files: [{
-          src: [ '*.html', 'dist/resources/**/*.js', 'dist/resources/**/*.css', 'libs/**' ]
+          src: [ '*.html', 'dist/resources/**/*.js', 'dist/resources/**/*.css', 'libs/**', 'bower_components/**' ]
         }]
       }
     },
