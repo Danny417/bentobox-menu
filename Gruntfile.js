@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/resources/js/main.js': [ '/dist/app.js' ]
+          'dist/resources/js/main.js': [ 'dist/app.js' ]
         },
         options: {
           mangle: false
