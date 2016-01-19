@@ -82,7 +82,7 @@ h3 {
 -------------------------------------------------- */
 .banner {
 	min-height: 250px;
-	background-image: url("../img/cover_.jpg");
+	background-image: url("./assets/img/cover_.jpg");
     background-repeat: no-repeat;
     background-position: center; 
     background-size: 1000px 100%;
@@ -317,7 +317,7 @@ input[type='number'] {
 	}
 	#map  > div{
 		margin-top: 40px;
-		background-image: url('../img/map-xs.jpg');
+		background-image: url('./assets/img/map-xs.jpg');
 		width: 280px;
 		height: 220px;
 	}
