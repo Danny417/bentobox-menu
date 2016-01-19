@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/resources/js/main.js': [ 'dist/app.js' ]
+          'dist/resources/js/main.js': [ 'tmp/app.js' ]
         },
         options: {
           mangle: false
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [ 'src/**/*.js', 'tmp/*.js' ],
-        dest: 'dist/app.js'
+        dest: 'tmp/app.js'
       }
     },
      // use jshint-stylish to make our errors look and read good
