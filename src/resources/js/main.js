@@ -159,17 +159,17 @@ app.controller('header', function ($scope, $log) {
 	}];
 	
 	$scope.links = [{
-			image: './resources/img/phone.png',
+			image: './assets/img/phone.png',
 			heading: '訂購線-西湖店',
 			content: '26277265',
 			url: 'tel:2627-7265'
 		}, {
-			image: './resources/img/place.png',
+			image: './assets/img/place.png',
 			heading: '店面住址',
 			content: '台北市內湖區內湖路一段323巷4弄8號(西湖市場旁)',
 			url: 'https://goo.gl/maps/jWRfz'
 		}, {
-			image: './resources/img/facebook.png',
+			image: './assets/img/facebook.png',
 			heading: '臉書網頁',
 			content: '歡迎留言',
 			url: 'https://www.facebook.com/pages/%E6%9D%B1%E6%B9%96%E7%81%AB%E8%BB%8A%E4%BE%BF%E7%95%B6/158186497613339'
@@ -215,9 +215,9 @@ app.controller('main', function ($scope, $log) {
 app.controller('contact', function ($scope, $log) {
 	'use strict';
 	$scope.mediaObjects = {
-		phoneImg: './resources/img/phone.png',
-		locImg: './resources/img/place.png',
-		fbImg: './resources/img/facebook.png',
+		phoneImg: './assets/img/phone.png',
+		locImg: './assets/img/place.png',
+		fbImg: './assets/img/facebook.png',
 		fbHeading: '臉書網頁',
 		fbContent: '歡迎留言',
 		fbURL: 'https://www.facebook.com/pages/%E6%9D%B1%E6%B9%96%E7%81%AB%E8%BB%8A%E4%BE%BF%E7%95%B6/158186497613339',

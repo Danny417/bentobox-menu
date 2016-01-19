@@ -87,7 +87,7 @@ module.exports = function(grunt) {
           archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip'
         },
         files: [{
-          src: [ '*.html', 'dist/resources/**/*.js', 'dist/resources/**/*.css', 'libs/**' ]
+          src: [ '*.html', 'dist/resources/**/*.js', 'dist/resources/**/*.css', 'libs/**', 'assets/**' ]
         }]
       }
     },
