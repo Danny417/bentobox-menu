@@ -120,7 +120,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/resources/css/style.min.css': 'src/resources/css/style.css'
+          'dist/resources/css/style.min.css': 'src/resources/css/**/*.css'
         }
       }
     },
