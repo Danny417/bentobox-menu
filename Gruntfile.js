@@ -103,7 +103,7 @@ module.exports = function(grunt) {
     compress: {
       dist: {
         options: {
-          archive: 'deploy/<%= pkg.name %>-<%= pkg.version %>'+grunt.option("buildNumber")+'.zip'
+          archive: 'deploy/'+grunt.option("buildTag")+'/<%= pkg.name %>-<%= pkg.version %>.'+grunt.option("buildNumber")+'.zip'
         },
         files: [{
           src: [ 'dist/**', 'src/img/**', 'src/fonts/**', 'src/flash/**' ]
@@ -159,6 +159,10 @@ module.exports = function(grunt) {
         singleRun: false,
         autoWatch: true
       }
+    },
+  
+    deploy: {
+      
     }
   });
   
@@ -177,7 +181,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-html2js');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-watch');  
 
   grunt.loadNpmTasks('grunt-karma');
   
@@ -187,4 +191,5 @@ module.exports = function(grunt) {
   grunt.registerTask('minified', [ 'clean:dist', 'connect:server', 'watch:min' ]);
   grunt.registerTask('package', [ 'clean', 'jshint', 'karma:junit', 'html2js:dist', 'concat:dist',
     'uglify:dist', 'less:dist', 'cssmin', 'htmlmin:dist', 'compress:dist', 'clean' ]);
+  grunt.registerTask('deploy', ['deploy']);
 };
