@@ -106,7 +106,8 @@ module.exports = function(grunt) {
           archive: 'dist/<%= pkg.name %>-<%= pkg.version %>'+grunt.option("buildNumber")+'.zip'
         },
         files: [{
-          src: [ 'dist/**', 'src/img/**', 'src/fonts/**', 'src/flash/**' ]
+          src: [ 'dist/**', 'src/img/**', 'src/fonts/**', 'src/flash/**' ],
+		  dest: 'deploy'
         }]
       }
     },
@@ -183,8 +184,8 @@ module.exports = function(grunt) {
   
   grunt.registerTask('dev', [ 'clean:dist', 'connect:server', 'watch:dev' ]);
   grunt.registerTask('test', [ 'clean:dist', 'jshint', 'karma:continuous' ]);
-  grunt.registerTask('junit', [ 'clean:dist', 'jshint', 'karma:junit' ]);
+  grunt.registerTask('junit', [ 'clean:dist', 'jshint', 'karma:junit', 'clean']);
   grunt.registerTask('minified', [ 'clean:dist', 'connect:server', 'watch:min' ]);
   grunt.registerTask('package', [ 'clean', 'jshint', 'karma:junit', 'html2js:dist', 'concat:dist',
-    'uglify:dist', 'less:dist', 'cssmin', 'htmlmin:dist', 'compress:dist' ]);
+    'uglify:dist', 'less:dist', 'cssmin', 'htmlmin:dist', 'compress:dist', 'clean' ]);
 };
