@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 	},
 	
     clean: {
-      temp: {
+      tmp: {
         src: [ 'tmp' ]
       },
       dist: {
