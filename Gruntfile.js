@@ -103,7 +103,7 @@ module.exports = function(grunt) {
     compress: {
       dist: {
         options: {
-          archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip'
+          archive: 'dist/<%= pkg.name %>-<%= pkg.version %>'+grunt.option("buildNumber")+'.zip'
         },
         files: [{
           src: [ 'dist/**', 'src/img/**', 'src/fonts/**', 'src/flash/**' ]
