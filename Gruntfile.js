@@ -185,6 +185,6 @@ module.exports = function(grunt) {
   grunt.registerTask('test', [ 'clean:dist', 'jshint', 'karma:continuous' ]);
   grunt.registerTask('junit', [ 'clean:dist', 'jshint', 'karma:junit' ]);
   grunt.registerTask('minified', [ 'clean:dist', 'connect:server', 'watch:min' ]);
-  grunt.registerTask('package', [ 'clean:dist', 'clean:tmp', 'jshint', 'karma:junit', 'html2js:dist', 'concat:dist',
-    'uglify:dist', 'less:dist', 'cssmin', 'htmlmin:dist', 'clean:temp', 'compress:dist' ]);
+  grunt.registerTask('package', [ 'clean', 'jshint', 'karma:junit', 'html2js:dist', 'concat:dist',
+    'uglify:dist', 'less:dist', 'cssmin', 'htmlmin:dist', 'compress:dist' ]);
 };
