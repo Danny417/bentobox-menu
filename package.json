@@ -13,6 +13,7 @@
 		"grunt-contrib-compress": "~0.9.1",
 		"grunt-contrib-concat": "~0.4.0",
 		"grunt-contrib-jshint": "~0.12.0",
+		"grunt-contrib-htmlmin": latest,
 		"jshint-stylish": "latest",
 		"grunt-contrib-watch": "~0.6.1",
 		"grunt-bower-task": "~0.3.4",

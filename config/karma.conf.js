@@ -5,6 +5,10 @@ module.exports = function(config) {
   config.set({
     basePath: '../',
     frameworks: [ 'jasmine' ],
+	exclude: [
+	  'src/js/libs/*.js',
+	  'src/js/plugins/*.js'
+	],
     files: [
       'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',

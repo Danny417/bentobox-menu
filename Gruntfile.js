@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/resources/js/main.min.js': [ 'tmp/app.js' ]
+          'dist/main.min.js': [ 'tmp/main.js' ]
         },
         options: {
           mangle: false
@@ -24,11 +24,24 @@ module.exports = function(grunt) {
     
     html2js: {
       dist: {
-        src: [ 'src/**/*.html' ],
+        src: [ 'src/views/*.html' ],
         dest: 'tmp/templates.js'
       }
     },
     
+	htmlmin: {                                     
+	  dist: {                                      
+		options: {                                 
+		  removeComments: true,
+		  collapseWhitespace: true
+		},
+		files: {                                   
+		  'dist/default.html': 'src/default.html',     // 'destination': 'source'
+		  'dist/error.html': 'src/error.html'
+		}
+	  }
+	},
+	
     clean: {
       temp: {
         src: [ 'tmp' ]
@@ -44,7 +57,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [ 'src/**/*.js', 'tmp/*.js' ],
-        dest: 'tmp/app.js'
+        dest: 'tmp/main.js'
       }
     },
      // use jshint-stylish to make our errors look and read good
@@ -52,7 +65,13 @@ module.exports = function(grunt) {
 	  options: {
         reporter: require('jshint-stylish')
       },
-      all: [ 'Gruntfile.js', 'src/*.js', 'src/**/*.js']
+      all: [
+	    'Gruntfile.js', 
+		'src/*.js', 
+		'src/**/*.js',
+		'!src/js/libs/*.js',
+		'!src/js/plugins/*.js'
+	  ]
     },
     
     connect: {
@@ -87,7 +106,7 @@ module.exports = function(grunt) {
           archive: 'dist/<%= pkg.name %>-<%= pkg.version %>.zip'
         },
         files: [{
-          src: [ '*.html', 'dist/resources/**/*.js', 'dist/resources/**/*.css', 'libs/**', 'assets/**' ]
+          src: [ 'dist/**', 'src/img/**', 'src/fonts/**', 'src/flash/**' ]
         }]
       }
     },
@@ -96,19 +115,19 @@ module.exports = function(grunt) {
     less: {
       dev: {
         options: {
-          paths: [ "src/resources/less" ]
+          paths: [ "src/less" ]
         },
         files: {
-          "dist/resources/css/style.css": "src/resources/less/*.less"
+          "tmp/less.css": "src/less/*.less"
         }
       },
       dist: {
         options: {
-          paths: [ "src/resources/less" ],
+          paths: [ "src/less" ],
           cleancss: true
         },
         files: {
-          "dist/resources/css/style.css": "src/resources/less/*.less"
+          "tmp/less.css": "src/less/*.less"
         }
       }
     },
@@ -120,7 +139,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/resources/css/style.min.css': 'src/resources/css/**/*.css'
+          'dist/style.min.css': ['src/**/*.css', 'tmp/*.css']
         }
       }
     },
@@ -157,6 +176,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-html2js');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.loadNpmTasks('grunt-karma');
@@ -165,6 +185,6 @@ module.exports = function(grunt) {
   grunt.registerTask('test', [ 'clean:dist', 'jshint', 'karma:continuous' ]);
   grunt.registerTask('junit', [ 'clean:dist', 'jshint', 'karma:junit' ]);
   grunt.registerTask('minified', [ 'clean:dist', 'connect:server', 'watch:min' ]);
-  grunt.registerTask('package', [ 'clean:dist', 'jshint', 'karma:junit', 'html2js:dist', 'concat:dist',
-    'uglify:dist', 'less:dist', 'cssmin', 'clean:temp', 'compress:dist' ]);
+  grunt.registerTask('package', [ 'clean:dist', 'clean:tmp', 'jshint', 'karma:junit', 'html2js:dist', 'concat:dist',
+    'uglify:dist', 'less:dist', 'cssmin', 'htmlmin:dist', 'clean:temp', 'compress:dist' ]);
 };
